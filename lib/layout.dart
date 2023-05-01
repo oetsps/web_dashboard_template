@@ -8,7 +8,10 @@ import 'widgets/top_nav.dart';
 
 
 class SiteLayout extends StatelessWidget {
+  final Widget child;
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+
+  SiteLayout({super.key, required this.child});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +27,8 @@ class SiteLayout extends StatelessWidget {
         customScreen: LargeScreen(),
         smallScreen: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: localNavigator(),
+          // child: localNavigator(),
+          child: child,
         )
       ),
     );
